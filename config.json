@@ -1,0 +1,8 @@
+{
+    "host": "{{mqtt_host}}",
+    "port": "{{mqtt_port}}",
+    "topic": "{{mqtt_topic}}",
+    "mqtt_user": "{{mqtt_user}}",
+    "mqtt_pass": "{{mqtt_pass}}",
+    "qos": {{mqtt_qos}}
+}
