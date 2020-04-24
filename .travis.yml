@@ -1,0 +1,7 @@
+services:
+  - docker
+
+script:
+  - docker build --no-cache -t test:latest .
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#  - docker push ${TRAVIS_REPO_SLUG}:${TRAVIS_COMMIT}
