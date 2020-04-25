@@ -2,6 +2,6 @@ services:
   - docker
 
 script:
-  - docker build --no-cache -t tuya-mqtt:"$VERSION" .
+  - docker build --no-cache -t anicos/tuya-mqtt:"$VERSION" .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tuya-mqtt:"$VERSION"
+  - docker push anicos/tuya-mqtt:"$VERSION"
