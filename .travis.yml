@@ -3,9 +3,5 @@ services:
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --no-cache --build-arg PARENT_DOCKER_IMAGE="node:lts-alpine3.11" -t anicos/tuya-mqtt:"$VERSION-amd64" .
-  - docker push anicos/tuya-mqtt:"$VERSION-amd64"
-#  - docker build --no-cache --build-arg PARENT_DOCKER_IMAGE="arm32v7/node:14.0.0" -t anicos/tuya-mqtt:"$VERSION-arm32v7" .
-#  - docker push anicos/tuya-mqtt:"$VERSION-arm32v7"
-
-
+  - docker build --no-cache -t anicos/tuya-mqtt:$VERSION-linux/arm64 .
+  - docker push nicos/tuya-mqtt:$VERSION-linux/arm64

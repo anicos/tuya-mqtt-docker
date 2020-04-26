@@ -1,5 +1,4 @@
-ARG PARENT_DOCKER_IMAGE
-FROM ${PARENT_DOCKER_IMAGE}
+FROM node:lts-alpine3.11
 WORKDIR /tuya-mqtt
 ADD https://github.com/anicos/tuya-mqtt/archive/master.zip ./
 RUN unzip -j ./master.zip
