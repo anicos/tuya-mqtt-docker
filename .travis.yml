@@ -1,7 +1,11 @@
 services:
   - docker
 
+env:
+  global:
+    - TUYA_MQTT_VERSION=2.0.1
+
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --no-cache -t anicos/tuya-mqtt:$VERSION-linux-amd64 .
-  - docker push anicos/tuya-mqtt:$VERSION-linux-amd64
+  - docker build --no-cache  --build-arg TUYA_MQTT_VERSION="$TUYA_MQTT_VERSION" -t anicos/tuya-mqtt:$TUYA_MQTT_VERSION-linux-amd64 .
+  - docker push anicos/tuya-mqtt:$TUYA_MQTT_VERSION-linux-amd64
