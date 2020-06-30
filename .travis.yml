@@ -3,7 +3,7 @@ services:
 
 env:
   global:
-    - TUYA_MQTT_VERSION=2.0.1
+    - TUYA_MQTT_VERSION=2.0.2
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
